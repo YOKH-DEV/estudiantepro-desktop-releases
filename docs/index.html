@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <meta name="description" content="Descarga EstudiantePro Desktop para Windows o Ubuntu y Debian.">
+    <title>Descargar EstudiantePro Desktop</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #0a0d0a;
+        color: #f0f5ed;
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; min-width: 280px; }
+      a { color: inherit; }
+      ::selection { background: #b5f58a; color: #0a0d0a; }
+
+      .skip-link {
+        position: absolute;
+        left: 1rem;
+        top: -5rem;
+        z-index: 10;
+        padding: .75rem 1rem;
+        background: #b5f58a;
+        color: #0a0d0a;
+      }
+      .skip-link:focus { top: 1rem; }
+
+      .wrap { width: min(100% - 2.5rem, 1080px); margin-inline: auto; }
+      .site-header { border-bottom: 1px solid #283428; }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 76px;
+      }
+      .brand { font-size: 1.08rem; font-weight: 750; letter-spacing: -.025em; text-decoration: none; }
+      .brand span { color: #b5f58a; }
+      .header-note { color: #b8c8b4; font-size: .8rem; letter-spacing: .02em; }
+
+      main { padding-block: clamp(3.5rem, 7vw, 6.8rem) 5rem; }
+      h1, h2, h3, p { margin: 0; }
+      .intro, .platform p, .guide p { text-wrap: pretty; }
+      h1 {
+        max-width: 15ch;
+        font-size: clamp(2.6rem, 7vw, 5.6rem);
+        font-weight: 760;
+        letter-spacing: -.038em;
+        line-height: 1.05;
+      }
+      .intro {
+        max-width: 62ch;
+        margin-top: 1.6rem;
+        color: #bfceba;
+        font-size: clamp(1rem, 2vw, 1.18rem);
+        line-height: 1.65;
+      }
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: .6rem;
+        margin-top: 2rem;
+        padding: .65rem .9rem;
+        border: 1px solid #476444;
+        border-radius: .5rem;
+        color: #d8e9d1;
+        font-size: .86rem;
+      }
+      .status::before {
+        content: "";
+        width: .55rem;
+        height: .55rem;
+        border-radius: 50%;
+        background: #b5f58a;
+      }
+
+      .downloads { margin-top: clamp(3.5rem, 7vw, 6rem); }
+      .section-heading { font-size: 1.45rem; letter-spacing: -.025em; }
+      .section-intro { margin-top: .7rem; color: #b8c8b4; line-height: 1.55; }
+      .platform-list { margin-top: 1.75rem; border-top: 1px solid #344434; }
+      .platform {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.9rem 0;
+        border-bottom: 1px solid #344434;
+      }
+      .platform h3 { font-size: 1.4rem; font-weight: 700; letter-spacing: -.02em; }
+      .platform p { margin-top: .45rem; color: #b8c8b4; line-height: 1.5; }
+      .platform .file { margin-top: .8rem; color: #d1dfc9; font-size: .84rem; }
+      .actions { display: grid; gap: .65rem; justify-items: center; }
+      .download-link, .unavailable {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 3rem;
+        min-width: 12.5rem;
+        padding: .7rem 1.25rem;
+        border-radius: .55rem;
+        font-size: .92rem;
+        font-weight: 720;
+        text-align: center;
+      }
+      .download-link {
+        background: #b5f58a;
+        color: #10200c;
+        text-decoration: none;
+        transition: background-color .18s ease, transform .18s ease;
+      }
+      .download-link:hover { background: #d0ffad; transform: translateY(-2px); }
+      .download-link:active { transform: translateY(0); }
+      .unavailable { border: 1px solid #526252; color: #c2cfc0; }
+      .checksum { color: #c2d5b9; font-size: .82rem; text-underline-offset: .2em; }
+      .checksum:hover { color: #e7f8df; }
+
+      .guide {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(2rem, 7vw, 7rem);
+        margin-top: clamp(4rem, 8vw, 7rem);
+        padding-top: 2.1rem;
+        border-top: 1px solid #344434;
+      }
+      .guide h2 { font-size: 1.4rem; letter-spacing: -.025em; }
+      .guide p { margin-top: 1rem; color: #bfceba; line-height: 1.65; }
+      .guide strong { color: #edf6e8; font-weight: 680; }
+      .site-footer {
+        border-top: 1px solid #283428;
+        color: #aabca6;
+        font-size: .82rem;
+      }
+      .footer-inner { display: flex; justify-content: space-between; gap: 1rem; padding-block: 1.6rem; }
+      .footer-inner a { text-underline-offset: .2em; }
+
+      a:focus-visible { outline: 3px solid #e6ffc8; outline-offset: 4px; }
+      @media (max-width: 640px) {
+        .wrap { width: min(100% - 2rem, 1080px); }
+        .header-inner { min-height: 68px; }
+        .header-note { display: none; }
+        .platform { grid-template-columns: 1fr; gap: 1.2rem; }
+        .actions { justify-items: stretch; }
+        .download-link, .unavailable { width: 100%; }
+        .guide { grid-template-columns: 1fr; }
+        .footer-inner { flex-direction: column; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .download-link { transition: none; }
+        .download-link:hover { transform: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Ir al contenido</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="brand" href="#contenido" aria-label="EstudiantePro Desktop, ir al inicio">Estudiante<span>Pro</span> <span class="header-note">Desktop</span></a>
+        <span class="header-note">Instalación para computador</span>
+      </div>
+    </header>
+
+    <main id="contenido" class="wrap">
+      <h1>EstudiantePro en tu computador.</h1>
+      <p class="intro">Elige tu sistema operativo, instala la aplicación e inicia sesión. La primera instalación se hace una sola vez desde esta página.</p>
+      <p class="status">Versión piloto 0.1.14 para pruebas</p>
+
+      <section class="downloads" aria-labelledby="descargas-titulo">
+        <h2 id="descargas-titulo" class="section-heading">Descargar la aplicación</h2>
+        <p class="section-intro">Los instaladores disponibles son para equipos de 64 bits.</p>
+        <div class="platform-list">
+          <div class="platform">
+            <div>
+              <h3>Windows</h3>
+              <p>Descarga el Setup y sigue los pasos del instalador.</p>
+              <p class="file">Versión 0.1.14 · Archivo .exe · x64</p>
+            </div>
+            <div class="actions">
+              <a class="download-link" href="https://github.com/YOKH-DEV/estudiantepro-desktop-releases/releases/download/v0.1.14/EstudiantePro-Desktop-0.1.14-windows-x64-Setup.exe">Descargar para Windows</a>
+              <a class="checksum" href="https://github.com/YOKH-DEV/estudiantepro-desktop-releases/releases/download/v0.1.14/EstudiantePro-Desktop-0.1.14-windows-x64-Setup.exe.sha256">Ver SHA-256</a>
+            </div>
+          </div>
+          <div class="platform">
+            <div>
+              <h3>Ubuntu / Debian</h3>
+              <p>Descarga el paquete .deb y ábrelo con el instalador de tu sistema.</p>
+              <p class="file">Versión 0.1.14 · Archivo .deb · amd64</p>
+            </div>
+            <div class="actions">
+              <a class="download-link" href="https://github.com/YOKH-DEV/estudiantepro-desktop-releases/releases/download/v0.1.14/estudiantepro-desktop_0.1.14_amd64.deb">Descargar para Linux</a>
+              <a class="checksum" href="https://github.com/YOKH-DEV/estudiantepro-desktop-releases/releases/download/v0.1.14/estudiantepro-desktop_0.1.14_amd64.deb.sha256">Ver SHA-256</a>
+            </div>
+          </div>
+          <div class="platform">
+            <div>
+              <h3>macOS</h3>
+              <p>La versión para Mac estará disponible después de probar y firmar el instalador.</p>
+              <p class="file">En preparación</p>
+            </div>
+            <div class="actions"><span class="unavailable">Descarga aún no disponible</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide" aria-label="Cómo instalar y actualizar">
+        <div>
+          <h2>Primera instalación</h2>
+          <p>Abre el archivo descargado, termina la instalación y entra con tu cuenta de EstudiantePro. En Windows puede aparecer un aviso porque este Setup piloto todavía no tiene firma de código.</p>
+        </div>
+        <div>
+          <h2>Próximas versiones</h2>
+          <p>Cuando haya una nueva versión para <strong>Windows o Linux</strong>, aparecerá el botón <strong>Actualizar</strong> dentro de la aplicación. Haz clic allí para instalarla sin volver a descargar el archivo desde esta página.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <span>EstudiantePro Desktop</span>
+        <a href="https://github.com/YOKH-DEV/estudiantepro-desktop-releases/releases/tag/v0.1.14">Ver detalles de la versión 0.1.14</a>
+      </div>
+    </footer>
+  </body>
+</html>
